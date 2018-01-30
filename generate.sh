@@ -1,0 +1,1 @@
+emacs test1.org --batch -l /Users/Lin/.emacs.d/init.el -f org-latex-export-to-pdf --kill

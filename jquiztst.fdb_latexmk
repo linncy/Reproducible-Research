@@ -1,0 +1,23 @@
+# Fdb version 3
+["pdflatex"] 1517344347 "jquiztst.tex" "jquiztst.pdf" "jquiztst" 1517344347
+  "/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty" 1463608860 8253 473e0e41f9adadb1977e8631b8f72ea6 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty" 1463608860 18425 5b3c0c59d76fac78978b5558e83c1f36 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1456875012 2210 5c54ab129b848a5071554186d0168766 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty" 1456875012 4160 c115536cf8d4ff25aa8c1c9bc4ecb79a ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty" 1459635588 82019 58dd7b022876c1d593cd2135c441946d ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty" 1459635588 4115 318a66090112f3aa3f415aeb6fe8540f ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty" 1456875012 2431 fe3078ec12fc30287f568596f8e0b948 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls" 1459635588 19821 310da678527a7dfe2a02c88af38079b7 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/base/size10.clo" 1459635588 8292 e897c12e1e886ce77fe26afc5d470886 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1459978653 3103 f32642b1cd56c010cdfb6545539b7f0b ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty" 1462915952 14391 bd64a9e5d07473b936423b5f3280ed2c ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty" 1428932888 8125 557ab9f1bfa80d369fb45a914aa8a3b4 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty" 1428932888 2594 d18d5e19aa8239cf867fa670c556d2e9 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty" 1454284088 3980 0a268fbfda01e381fa95821ab13b6aee ""
+  "/usr/local/texlive/2016/texmf-dist/tex/xelatex/xetex-def/xetex.def" 1460062404 21052 2a1a30b53c57c3b04e71c305475a35fc ""
+  "jquiztst.aux" 1517344342 8 a94a2480d3289e625eea47cd1b285758 ""
+  "jquiztst.tex" 1504908484 10237 b69e5a3cb2d2e6046bdcbfe6f5486a6a ""
+  "web.sty" 0 -1 0 ""
+  (generated)
+  "jquiztst.pdf"
+  "jquiztst.log"

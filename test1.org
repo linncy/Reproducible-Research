@@ -1,12 +1,10 @@
 #+TITLE: Test
 #+AUTHOR: Changyuan Lin
 #+EMAIL: linchangyuan1996@gmail.com
-#+Latex_header: \usepackage{float}
+#+Latex_header: \usepackage[pdftex]{insdljs}
 #+Latex_header: \newcommand{\aDE}[4]{\begin{center}\begin{equation}\label{#4}\frac{{dy(t)}}{{dt}} -#1y(t) = #2u(t),y(0) = #3 \end{equation}\end{center}}
-#+BEGIN: db
-#+END:
-
-
+#+Latex_header: \newcommand\tugHello{Hello World!}
+#+Latex_header:\begin{insDLJS}{mydljs}{My Private DLJS}function HelloWorld() { app.alert("\tugHello", 3); }\end{insDLJS}
 #+Name: isShell
 #+Begin_src python :var isShell=1 :exports none
 return isShell
@@ -232,18 +230,11 @@ return "#+MACRO: eqq 123"
 	\[ \frac{Y(s)}{U(s)} = \frac{5}{s+1}\]
 	\[\boxed{ \nonumber  \tau = 1, \quad \tau_{d} = 0\Rightarrow \Delta t = (0.1\sim0.2)1\tau = 0.1\sim 0.2}\]
 
-#+begin_src elisp
-(expand-file-name
-             "ditaa.jar"
-      (file-name-as-directory
-            (expand-file-name
-                "scripts"
-               (file-name-as-directory
-                  (expand-file-name
-                      "../contrib"
-                     (file-name-directory (org-find-library-dir "org")))))))
-#+end_src
-
-#+RESULTS:
-: /Applications/Emacs.app/Contents/Resources/lisp/contrib/scripts/ditaa.jar
-
+* Chapter 2
+** JavaScript
+#+BEGIN_LATEX
+\begin{Form} % a hyperref environment, needed for \PushButton
+% use built in form button of hyperref
+Push \PushButton[name=myButton,onclick={HelloWorld();}]{Button}
+\end{Form}
+#+END_LATEX

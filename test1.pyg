@@ -1,9 +1,0 @@
-(expand-file-name
-	     "ditaa.jar"
-      (file-name-as-directory
-	    (expand-file-name
-		"scripts"
-	       (file-name-as-directory
-		  (expand-file-name
-		      "../contrib"
-		     (file-name-directory (org-find-library-dir "org")))))))

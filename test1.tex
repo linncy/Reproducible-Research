@@ -1,4 +1,4 @@
-e% Created 2018-01-30 Tue 14:39
+% Created 2018-02-06 Tue 11:34
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -14,14 +14,12 @@ e% Created 2018-01-30 Tue 14:39
 \usepackage{marvosym}
 \usepackage{wasysym}
 \usepackage{amssymb}
+\usepackage{hyperref}
 \tolerance=1000
-\usepackage[pdftex]{hyperref}
 \usepackage[pdftex]{insdljs}
 \newcommand{\aDE}[4]{\begin{center}\begin{equation}\label{#4}\frac{{dy(t)}}{{dt}} -#1y(t) = #2u(t),y(0) = #3 \end{equation}\end{center}}
 \newcommand\tugHello{Hello World!}
-\begin{insDLJS}{mydljs}{My Private DLJS}
-function HelloWorld() { app.alert("\tugHello", 3); }
-\end{insDLJS}
+\begin{insDLJS}{mydljs}{My Private DLJS}function HelloWorld() {app.alert("\tugHello", 3); }\end{insDLJS}
 \author{Changyuan Lin}
 \date{\today}
 \title{Test}
@@ -44,11 +42,7 @@ Consider the differential equation given below.
 \label{sec-1-2}
 Consider the singal given below.
 
-\begin{figure}[!htpb]
-\centering
-\includegraphics[width=0.5in]{plot.png}
-\caption{\label{FIG:fig2}Reconstruct signal \(y(t)\).}
-\end{figure}
+\url{}
 
 \subsection{Inline Equation}
 \label{sec-1-3}
@@ -89,11 +83,7 @@ Solution:
          \end{array}\]
 \end{itemize}
 
-\begin{figure}[!htpb]
-\centering
-\includegraphics[width=4in]{plot1.png}
-\caption{\label{FIG:fig3}Finite difference and exact discretization \(y(k)\).}
-\end{figure}
+\url{}
 
 
 
@@ -152,9 +142,26 @@ Solution:
 \label{sec-2}
 \subsection{JavaScript}
 \label{sec-2-1}
-\begin{Form} % a hyperref environment, needed for \PushButton
-% use built in form button of hyperref
-Push \PushButton[name=myButton,onclick={HelloWorld();}]{Button}
+\subsection{Answer Sheet via Email}
+\label{sec-2-2}
+#+RESULTS: AnswerSheet
+
+
+\begin{Form}[action=mailto:forms@stackexchange.invalid?subject={CHE576HW02}&body=token,method=post]
+    \noindent\TextField[stuid=stuid]{Student ID:}\\[1mm]
+    \noindent\TextField[token=token]{token:}\\[1mm]
+    \noindent\TextField[token=token]{token:}\\[1mm]
+    \noindent\TextField[Q1=Q1]{Question1:}\\[1mm]
+    \Reset{Reset} \quad \Submit{Submit} \quad 
+\end{Form}
+
+\subsection{Answer Sheet via Post}
+\label{sec-2-3}
+\begin{Form}[action=mailto:forms@stackexchange.invalid?subject={The submitted form},method=post]
+    \noindent\TextField[name=name]{Name:}\\[1mm]
+    \ChoiceMenu[radio,name=gender]{Gender:}{male=male,female=fem}\\[1mm]
+    \TextField[name=email,width=5cm]{E-mail:}\\[5mm]
+    \Reset{Reset} \quad \Submit{Submit} \quad  \Acrobatmenu{Print}{Print}
 \end{Form}
 % Emacs 25.3.1 (Org mode 8.2.10)
 \end{document}

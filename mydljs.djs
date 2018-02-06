@@ -4,7 +4,7 @@
 \obeyspaces\obeylines\let^^M=\jsR%
 \catcode`\"=12%
 \gdef\dljsmydljsiii{%
-function HelloWorld() { app.alert("\tugHello", 3); }
+function HelloWorld() {app.alert("\tugHello", 3); }
 }%
 \endgroup
 \begingroup 

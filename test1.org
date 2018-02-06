@@ -4,7 +4,7 @@
 #+Latex_header: \usepackage[pdftex]{insdljs}
 #+Latex_header: \newcommand{\aDE}[4]{\begin{center}\begin{equation}\label{#4}\frac{{dy(t)}}{{dt}} -#1y(t) = #2u(t),y(0) = #3 \end{equation}\end{center}}
 #+Latex_header: \newcommand\tugHello{Hello World!}
-#+Latex_header:\begin{insDLJS}{mydljs}{My Private DLJS}function HelloWorld() { app.alert("\tugHello", 3); }\end{insDLJS}
+#+Latex_header:\begin{insDLJS}{mydljs}{My Private DLJS}function HelloWorld() {app.alert("\tugHello", 3); }\end{insDLJS}
 #+Name: isShell
 #+Begin_src python :var isShell=1 :exports none
 return isShell
@@ -12,6 +12,17 @@ return isShell
 
 #+RESULTS: isShell
 : 0
+#+Name: stuid
+#+Begin_src python :exports none
+import sys,os,re
+ini_file = open("par.ini", "r")
+fread= ini_file.read()
+ini_file.close()
+return fread
+#+end_src
+
+#+RESULTS: stuid
+: stuid='1000416'
 
 #+Name: par
 #+Begin_src python :var input="0000777" :exports none
@@ -220,7 +231,7 @@ return "#+MACRO: eqq 123"
  #+CAPTION: Block diagram elements
  #+NAME: fig:fig1
  #+RESULTS:
- [[file:hello.eps]]
+ [[file:hello.png]]
 
       - \[\begin{array}{c}
         \Phi = e^{-\frac{0.2}{K\overline{A}}}, \quad \Gamma = -K\left(e^{-\frac{0.2}{K\overline{A}}} - 1\right), \quad \theta = 1 \\[0.5cm]
@@ -232,9 +243,30 @@ return "#+MACRO: eqq 123"
 
 * Chapter 2
 ** JavaScript
+** Answer Sheet via Email
+#+Name: AnswerSheet
+#+BEGIN_SRC python :results raw output :exports results
+print "\n"
+print "\\begin{Form}[action=mailto:forms@stackexchange.invalid?subject={CHE576HW02}&body=token,method=post]"
+print "    \\noindent\TextField[stuid=stuid]{Student ID:}\\\[1mm]"
+print "    \\noindent\TextField[token=token]{token:}\\\[1mm]"
+print "    \\noindent\TextField[token=token]{token:}\\\[1mm]"
+print "    \\noindent\TextField[Q1=Q1]{Question1:}\\\[1mm]"
+print "    \\Reset{Reset} \\quad \\Submit{Submit} \\quad "
+print "\\end{Form}"
+#+END_SRC
+
 #+BEGIN_LATEX
-\begin{Form} % a hyperref environment, needed for \PushButton
-% use built in form button of hyperref
-Push \PushButton[name=myButton,onclick={HelloWorld();}]{Button}
+#+RESULTS: AnswerSheet
+
+#+END_LATEX
+
+** Answer Sheet via Post
+#+BEGIN_LATEX
+\begin{Form}[action=mailto:forms@stackexchange.invalid?subject={The submitted form},method=post]
+    \noindent\TextField[name=name]{Name:}\\[1mm]
+    \ChoiceMenu[radio,name=gender]{Gender:}{male=male,female=fem}\\[1mm]
+    \TextField[name=email,width=5cm]{E-mail:}\\[5mm]
+    \Reset{Reset} \quad \Submit{Submit} \quad  \Acrobatmenu{Print}{Print}
 \end{Form}
 #+END_LATEX

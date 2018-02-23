@@ -1,0 +1,89 @@
+#+OPTIONS: author:nil date:nil toc:nil
+#+LATEX_HEADER_EXTRA:  \usepackage{mdframed}
+#+LATEX_HEADER_EXTRA:  \usepackage{fancybox}
+#+LATEX_HEADER_EXTRA:  \usepackage{alertmessage}
+#+LATEX_HEADER_EXTRA: \BeforeBeginEnvironment{minted}{\begin{mdframed}}
+#+LATEX_HEADER_EXTRA: \AfterEndEnvironment{minted}{\end{mdframed}}
+#+TITLE:Homework Instructions for CHE576
+#+Name: par
+#+Begin_src python :exports none :var filename=(buffer-file-name)
+import os,json,re,sys
+import pycse.orgmode as org
+FileNameWithoutExtension=re.split('\.',re.split('/',filename)[-1])[0]
+JSONname=FileNameWithoutExtension+'.json'
+if not os.path.isfile(JSONname):
+    print ("json2dict Error: " + JSONname + " doesn't exist")
+    sys.exit()
+JSON_file=open(JSONname, "r")
+jsondict=json.loads(JSON_file.read())
+JSON_file.close()
+data = [['parameter_name', 'parameter_value'], None, 
+['course', str(jsondict['course'])], 
+['term', str(jsondict['term'])],
+['classnumber', str(jsondict['classnumber'])], 
+['stu_name', str(jsondict['stu_name'])], 
+['stuid', str(jsondict['stuid'])], 
+['token_type', str(jsondict['token_type'])], 
+['token', str(jsondict['token'])], 
+['token_expiration', str(jsondict['token_expiration'])], 
+['message',str(jsondict['message'])],
+]
+org.table(data, name='table-data', caption='Data from a python table')
+return data
+#+end_src
+#+RESULTS: par
+| parameter_name   | parameter_value  |
+|------------------+------------------|
+| course           | CHE576H1         |
+| term             | Winter Term 2018 |
+| classnumber      | 82604            |
+| stu_name         | Han,Ruijing      |
+| stuid            | 1557000          |
+| token_type       | ACCESS           |
+| token            | Z39WF47J         |
+| token_expiration | Winter Term 2018 |
+| message          |                  |
+
+#+begin_src python :var par=par :results output raw :exports results
+import pycse.orgmode as org
+
+#org.verbatim("One liner verbatim2\n")
+#org.latex("\\alertinfo{You should check the information below.}")
+
+org.latex("\doublebox{\large\b Please check the following information.}")
+string="\doublebox{%\begin{Bdescription}"
+
+#+end_src
+
+#+RESULTS:
+
+#+BEGIN_LATEX
+\doublebox{%
+\begin{Bdescription}
+\item[David] Groceries
+\item[Eli] Hamster cages\\
+Surreal numbers
+\item(3pt)[Doris] Pick up Peter
+\end{Bdescription}}
+
+#+END_LATEX
+
+#+Name: box
+#+Begin_src python :var boxpar=par :exports none
+return boxpar[2][1]
+#+end_src
+
+#+RESULTS: box
+: 82604
+
+#+BEGIN_mdframed
+Course Name: CHE576H1    Term: Winter Term 2018
+
+Class Number: 82604
+
+Name: Abdullah,Fahim
+
+Student ID: 1431383
+
+ACCESS Token: Xsrb18LA
+#+END_mdframed
